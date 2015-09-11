@@ -1,0 +1,17 @@
+<div class = 'row'>
+	<div class = "col-lg-2">
+				<input name = "filter_product" class = "form-control" type = "text" ng-model= "filter_product">
+	</div>
+	<div class = 'col-lg-8'>
+		<div class = "product_display" ng-repeat = "product in products | filter: filter_product | limitTo: 4">
+				<img src = "{{ product.image }}">
+				<h4>{{product.name}}</h4>
+				<h5>{{product.quantity}}</h5>
+				<h5>{{product.description}}</h5>
+		</div>
+		<h3>Recent Orders</h3>
+			<h3 ng-repeat = 'order in orders | limitTo: 5'>{{order.name + " purchased a " + order.product + " on "}} {{order.date | date: "fullDate"}}</h3>
+		<h3>New Customers</h3>
+			<h3 ng-repeat = "customer in customers | limitTo: 5">{{customer.name + " joined the store "}}{{customer.date | date: "fullDate"}}</h3>
+
+

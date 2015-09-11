@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app = 'Myapp'>
+<head>
+	<title>New guy</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"/></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src='app.js'></script>
+	<script src = "controllers\customersControllers.js"></script>
+	<script src = "controllers\ordersControllers.js"></script>
+	<script src = "factories\customersFactories.js"></script>
+	<script src = "factories\ordersFactories.js"></script>
+	<script src = "controllers\productsControllers.js"></script>
+	<script src = "factories\productsFactories.js"></script>
+	<script src = "controllers\dashboardController.js"></script>
+
+	<style>
+		label{
+			margin-top: 50px;
+		}
+		img{
+			width: 150px;
+			height: 115px;
+		}
+		.product_display{
+			display: inline-block;
+			margin: 20px;
+			height: 250px;
+			width: 220px;
+			border: black 1px solid;
+			border-radius: 15px;
+			padding: 25px;
+			text-align: center;
+			vertical-align: top;
+		}
+	</style>
+</head>
+<body>
+<a href = "#/">Dashboard</a> || <a href = "#/products"> Products </a> || <a href= "#/customers"> Customers </a> || <a href= "#/orders"> Orders </a> || <a href = "#/settings">Settings</a>
+<div ng-view=''></div>
+</body>
+</html>

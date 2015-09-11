@@ -1,0 +1,32 @@
+<div class = "row">
+	<div class = "col-lg-2">
+		<label for = 'filter_product'>Filter Products</label>
+		<input name = "filter_product" class = "form-control" type = "text" ng-model= "filter_product">
+		<h3>Add a new product</h3>
+		<label for = "name">Name:</label>
+		<input name = "name" class = "form-control" ng-model = "newProduct.name">
+		<label for = "image">Add Image:</label>
+		<input name = "image" class = "form-control" ng-model = "newProduct.image">
+		<label for = "description">Add Description:</label>
+		<textarea name = "description" class = "form-control" ng-model = "newProduct.description"></textarea>
+		<label for = "quantity">Order Quanitity</label>
+		<select name = "quanitity" ng-model = "newProduct.initial_quantity">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+		</select>
+		<input class = "btn btn-primary" type = "submit" ng-click = "addProduct()">
+	</div>
+	<div class = "col-lg-9">
+		<div class = "product_display" ng-repeat = "product in products | filter: filter_product">
+				<img src = "{{ product.image }}">
+				<h4>{{product.name}}</h4>
+				<h5>{{product.quantity}}</h5>
+				<h5>{{product.description}}</h5>
+		</div>
+	</div>
+	<div class = "col-lg-1"></div>
+</div>
